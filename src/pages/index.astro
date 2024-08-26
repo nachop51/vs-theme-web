@@ -4,39 +4,6 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="VS Theme Builder">
   <main>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="absolute w-full h-full inset-0"
-      viewBox="0 0 834 1251"
-      fill="none"
-    >
-      <g filter="url(#filter0_f_1007_1662)">
-        <path
-          d="M207 639.649C207 546.507 301.244 471 417.5 471C533.756 471 628 546.507 628 639.649C628 732.792 533.756 751 417.5 751C301.244 751 207 732.792 207 639.649Z"
-          fill="#7D2AE8"></path>
-      </g>
-      <defs>
-        <filter
-          id="filter0_f_1007_1662"
-          x="-293"
-          y="-29"
-          width="1421"
-          height="1280"
-          filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
-        >
-          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-          <feBlend
-            mode="normal"
-            in="SourceGraphic"
-            in2="BackgroundImageFix"
-            result="shape"></feBlend>
-          <feGaussianBlur
-            stdDeviation="250"
-            result="effect1_foregroundBlur_1007_1662"></feGaussianBlur>
-        </filter>
-      </defs>
-    </svg>
     <h1>
       Create Stunning VSCode themes
       <span class="text-gradient">with ease</span>
@@ -47,17 +14,22 @@ import Layout from "../layouts/Layout.astro";
       recusandae eaque provident quidem nemo animi ipsam officiis qui reiciendis
       assumenda.
     </p>
-    <figure>
-      <img src="" alt="" />
+    <figure class="w-full mt-6">
+      <img
+        src="/code.png"
+        class="mx-auto max-w-xl w-full"
+        alt="Theme visualization"
+      />
     </figure>
   </main>
 </Layout>
 
 <style lang="postcss">
   main {
-		@apply mx-auto p-4 text-xl pt-20 min-h-screen bg-no-repeat relative;
-		background: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTQ0MCA3ODYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CjxwYXRoIGQ9Ik0wIDBIMTQ0MFY3ODZDOTc4LjY3MSA1OTYuNjYzIDQ2MS4zMjkgNTk2LjY2MyAwIDc4NlYwWiIgZmlsbD0iIzA3MUMzNCIvPgo8L3N2Zz4=");
-		background-size: contain;
+		@apply mx-auto p-4 text-xl pt-20 min-h-screen relative;
+		background: url("data:image/svg+xml;base64,PHN2ZwogICAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgIHZpZXdCb3g9IjAgMCA4MzQgMTI1MSIKICAgICAgZmlsbD0ibm9uZSIKICAgID4KICAgICAgPGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfZl8xMDA3XzE2NjIpIj4KICAgICAgICA8cGF0aAogICAgICAgICAgZD0iTTIwNyA2MzkuNjQ5QzIwNyA1NDYuNTA3IDMwMS4yNDQgNDcxIDQxNy41IDQ3MUM1MzMuNzU2IDQ3MSA2MjggNTQ2LjUwNyA2MjggNjM5LjY0OUM2MjggNzMyLjc5MiA1MzMuNzU2IDc1MSA0MTcuNSA3NTFDMzAxLjI0NCA3NTEgMjA3IDczMi43OTIgMjA3IDYzOS42NDlaIgogICAgICAgICAgZmlsbD0iIzdEMkFFOCI+PC9wYXRoPgogICAgICA8L2c+CiAgICAgIDxkZWZzPgogICAgICAgIDxmaWx0ZXIKICAgICAgICAgIGlkPSJmaWx0ZXIwX2ZfMTAwN18xNjYyIgogICAgICAgICAgeD0iLTI5MyIKICAgICAgICAgIHk9Ii0yOSIKICAgICAgICAgIHdpZHRoPSIxNDIxIgogICAgICAgICAgaGVpZ2h0PSIxMjgwIgogICAgICAgICAgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgICAgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIgogICAgICAgID4KICAgICAgICAgIDxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ij48L2ZlRmxvb2Q+CiAgICAgICAgICA8ZmVCbGVuZAogICAgICAgICAgICBtb2RlPSJub3JtYWwiCiAgICAgICAgICAgIGluPSJTb3VyY2VHcmFwaGljIgogICAgICAgICAgICBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIKICAgICAgICAgICAgcmVzdWx0PSJzaGFwZSI+PC9mZUJsZW5kPgogICAgICAgICAgPGZlR2F1c3NpYW5CbHVyCiAgICAgICAgICAgIHN0ZERldmlhdGlvbj0iMjUwIgogICAgICAgICAgICByZXN1bHQ9ImVmZmVjdDFfZm9yZWdyb3VuZEJsdXJfMTAwN18xNjYyIj48L2ZlR2F1c3NpYW5CbHVyPgogICAgICAgIDwvZmlsdGVyPgogICAgICA8L2RlZnM+CiAgICA8L3N2Zz4="), url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTQ0MCA3ODYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CjxwYXRoIGQ9Ik0wIDBIMTQ0MFY3ODZDOTc4LjY3MSA1OTYuNjYzIDQ2MS4zMjkgNTk2LjY2MyAwIDc4NlYwWiIgZmlsbD0iIzA3MUMzNCIvPgo8L3N2Zz4=");
+		background-size: 100% 70%, contain;
+		background-repeat: no-repeat, no-repeat;
   }
 
   h1 {
@@ -65,7 +37,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
 	p {
-		@apply text-center text-white text-balance text-base;
+		@apply text-center text-white text-balance text-base font-extralight;
 	}
 
   .text-gradient {
