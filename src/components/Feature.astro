@@ -1,0 +1,36 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  color: string;
+}
+
+const { icon, title, description, color } = Astro.props;
+---
+
+<div>
+  <picture style=`background-color: ${color};`>
+    <img src={icon} alt={title} />
+  </picture>
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
+
+<style lang="postcss">
+  div {
+    @apply text-center flex flex-col gap-2 items-center;
+  }
+
+  picture {
+    @apply w-24 h-24 p-4 rounded-full flex items-center justify-center;
+  }
+
+  h3 {
+    @apply text-lg font-bold;
+  }
+
+  p {
+    @apply text-sm;
+  }
+</style>
