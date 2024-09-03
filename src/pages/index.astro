@@ -1,44 +1,103 @@
 ---
+import Feature from "../components/Feature.astro";
 import Layout from "../layouts/Layout.astro";
+
+const features = [
+  {
+    icon: "/eye.svg",
+    title: "Eye comfort",
+    description:
+      "Protect your eyes with soft, balanced colors, perfect for long work sessions",
+    color: "#d1fae5",
+  },
+  {
+    icon: "/bolt.svg",
+    title: "Faster understanding",
+    description:
+      "Enhance reading speed and comprehension by associating colors with key code elements",
+    color: "#cffafe",
+  },
+  {
+    icon: "/book.svg",
+    title: "Better readability",
+    description:
+      "Enjoy clear, easy-to-read code with optimized fonts and proper contrast",
+    color: "#dbeafe",
+  },
+  {
+    icon: "/palette.svg",
+    title: "Consistent palette",
+    description:
+      "Maintain visual uniformity across languages with a carefully selected color palette",
+    color: "#ede9fe",
+  },
+];
 ---
 
 <Layout title="VS Theme Builder">
-  <main>
+  <header>
     <h1>
       Create Stunning VSCode themes
       <span class="text-gradient">with ease</span>
     </h1>
-    <p>
+    <p
+      class="text-center text-white text-balance text-base font-extralight mb-8"
+    >
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis animi cum
       a consequuntur officiis! Vitae exercitationem nobis, perferendis cum
       recusandae eaque provident quidem nemo animi ipsam officiis qui reiciendis
       assumenda.
     </p>
-    <figure class="w-full mt-6">
+    <picture class="w-full">
       <img
         src="/code.png"
         class="mx-auto max-w-xl w-full"
         alt="Theme visualization"
       />
-    </figure>
+    </picture>
+  </header>
+  <main>
+    <section>
+      <h2>What's Included</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, iste
+        blanditiis. Libero alias ipsum debitis vero soluta officiis? Beatae
+        voluptas delectus quibusdam inventore ex laboriosam. Aperiam doloribus
+        necessitatibus perspiciatis eos!
+      </p>
+      <img src="" alt="" />
+      <img src="" alt="" />
+    </section>
+    <section>
+      <h2>Nachop Theme Showcase</h2>
+      <p class="text-center mb-8">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, sit
+        consequatur. Neque magni quis voluptates molestiae enim.
+      </p>
+      <img class="max-w-3xl mx-auto mb-6" src="/demo.png" alt="" />
+      <div class="flex space-around gap-12 px-4 sm:px-6">
+        {features.map((feature) => <Feature {...feature} />)}
+      </div>
+    </section>
   </main>
 </Layout>
 
 <style lang="postcss">
-  main {
-		@apply mx-auto p-4 text-xl pt-20 min-h-screen relative;
+  header {
+		@apply mx-auto p-4 text-xl pt-20 relative;
 		background: url("data:image/svg+xml;base64,PHN2ZwogICAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgIHZpZXdCb3g9IjAgMCA4MzQgMTI1MSIKICAgICAgZmlsbD0ibm9uZSIKICAgID4KICAgICAgPGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfZl8xMDA3XzE2NjIpIj4KICAgICAgICA8cGF0aAogICAgICAgICAgZD0iTTIwNyA2MzkuNjQ5QzIwNyA1NDYuNTA3IDMwMS4yNDQgNDcxIDQxNy41IDQ3MUM1MzMuNzU2IDQ3MSA2MjggNTQ2LjUwNyA2MjggNjM5LjY0OUM2MjggNzMyLjc5MiA1MzMuNzU2IDc1MSA0MTcuNSA3NTFDMzAxLjI0NCA3NTEgMjA3IDczMi43OTIgMjA3IDYzOS42NDlaIgogICAgICAgICAgZmlsbD0iIzdEMkFFOCI+PC9wYXRoPgogICAgICA8L2c+CiAgICAgIDxkZWZzPgogICAgICAgIDxmaWx0ZXIKICAgICAgICAgIGlkPSJmaWx0ZXIwX2ZfMTAwN18xNjYyIgogICAgICAgICAgeD0iLTI5MyIKICAgICAgICAgIHk9Ii0yOSIKICAgICAgICAgIHdpZHRoPSIxNDIxIgogICAgICAgICAgaGVpZ2h0PSIxMjgwIgogICAgICAgICAgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgICAgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIgogICAgICAgID4KICAgICAgICAgIDxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ij48L2ZlRmxvb2Q+CiAgICAgICAgICA8ZmVCbGVuZAogICAgICAgICAgICBtb2RlPSJub3JtYWwiCiAgICAgICAgICAgIGluPSJTb3VyY2VHcmFwaGljIgogICAgICAgICAgICBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIKICAgICAgICAgICAgcmVzdWx0PSJzaGFwZSI+PC9mZUJsZW5kPgogICAgICAgICAgPGZlR2F1c3NpYW5CbHVyCiAgICAgICAgICAgIHN0ZERldmlhdGlvbj0iMjUwIgogICAgICAgICAgICByZXN1bHQ9ImVmZmVjdDFfZm9yZWdyb3VuZEJsdXJfMTAwN18xNjYyIj48L2ZlR2F1c3NpYW5CbHVyPgogICAgICAgIDwvZmlsdGVyPgogICAgICA8L2RlZnM+CiAgICA8L3N2Zz4="), url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTQ0MCA3ODYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CjxwYXRoIGQ9Ik0wIDBIMTQ0MFY3ODZDOTc4LjY3MSA1OTYuNjYzIDQ2MS4zMjkgNTk2LjY2MyAwIDc4NlYwWiIgZmlsbD0iIzA3MUMzNCIvPgo8L3N2Zz4=");
 		background-size: 100% 70%, contain;
 		background-repeat: no-repeat, no-repeat;
   }
 
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   h1 {
     @apply text-4xl sm:text-6xl md:text-7xl font-bold text-center text-pretty text-white mb-6;
   }
-
-	p {
-		@apply text-center text-white text-balance text-base font-extralight;
-	}
 
   .text-gradient {
     background-image: linear-gradient(to right, var(--primary), var(--accent));
