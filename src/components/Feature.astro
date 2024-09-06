@@ -10,9 +10,9 @@ const { icon, title, description, color } = Astro.props;
 ---
 
 <div>
-  <picture style=`background-color: ${color};`>
-    <img src={icon} alt={title} />
-  </picture>
+  <figure style=`background-color: ${color};`>
+    <Fragment set:html={icon} />
+  </figure>
   <h3>{title}</h3>
   <p>{description}</p>
 </div>
@@ -22,7 +22,7 @@ const { icon, title, description, color } = Astro.props;
     @apply text-center flex flex-col gap-2 items-center;
   }
 
-  picture {
+  figure {
     @apply w-24 h-24 p-4 rounded-full flex items-center justify-center;
   }
 
