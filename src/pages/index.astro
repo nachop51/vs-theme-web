@@ -1,32 +1,41 @@
 ---
+import { Image } from "astro:assets";
 import Card from "../components/Card.astro";
 import Feature from "../components/Feature.astro";
 import Layout from "../layouts/Layout.astro";
 
+import headerImage from "/public/header.png";
+import demoImage from "/public/demo.png";
+
+import eyeSvg from "/public/eye.svg?raw";
+import boltSvg from "/public/bolt.svg?raw";
+import bookSvg from "/public/book.svg?raw";
+import paletteSvg from "/public/palette.svg?raw";
+
 const features = [
   {
-    icon: "/eye.svg",
+    icon: eyeSvg,
     title: "Eye comfort",
     description:
       "Protect your eyes with soft, balanced colors, perfect for long work sessions",
     color: "#d1fae5",
   },
   {
-    icon: "/bolt.svg",
+    icon: boltSvg,
     title: "Faster understanding",
     description:
       "Enhance reading speed and comprehension by associating colors with key code elements",
     color: "#cffafe",
   },
   {
-    icon: "/book.svg",
+    icon: bookSvg,
     title: "Better readability",
     description:
       "Enjoy clear, easy-to-read code with optimized fonts and proper contrast",
     color: "#dbeafe",
   },
   {
-    icon: "/palette.svg",
+    icon: paletteSvg,
     title: "Consistent palette",
     description:
       "Maintain visual uniformity across languages with a carefully selected color palette",
@@ -67,10 +76,11 @@ const stuffIncluded = [
       assumenda.
     </p>
     <picture class="w-full">
-      <img
-        src="/code.png"
+      <Image
+        src={headerImage}
         class="mx-auto max-w-xl w-full"
         alt="Theme visualization"
+        loading={"eager"}
       />
     </picture>
   </header>
@@ -79,14 +89,16 @@ const stuffIncluded = [
     <section>
       <header class="max-w-5xl mx-auto">
         <h2 class="text-left">What's Included</h2>
-        <p>
+        <p class="mb-6">
           Discover the powerful features of the npm package designed to enhance
           your VS Code theming experience. This package streamlines the creation
           process, providing essential tools and functionalities to help you
           build and customize your themes with ease.
         </p>
       </header>
-      {stuffIncluded.map((stuff) => <Card {...stuff} />)}
+      <div class="flex flex-wrap justify-around">
+        {stuffIncluded.map((stuff) => <Card {...stuff} />)}
+      </div>
     </section>
     <!-- Showcase section -->
     <section>
@@ -96,7 +108,12 @@ const stuffIncluded = [
         consectetur adipisicing elit. Quasi, sit consequatur. Neque magni quis
         voluptates molestiae enim.
       </p>
-      <img class="max-w-3xl mx-auto mb-6" src="/demo.png" alt="" />
+      <Image
+        src={demoImage}
+        alt="Nachop Theme Showcase"
+        class="max-w-3xl mx-auto mb-6"
+        loading={"eager"}
+      />
       <div class="flex space-around gap-12 sm:px-6">
         {features.map((feature) => <Feature {...feature} />)}
       </div>
