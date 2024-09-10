@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  review: string;
+  name: string;
+  role: string;
+  image: string;
+}
+
+const { review, name, role, image } = Astro.props;
+---
+
+<article
+  class="bg-white rounded-xl shadow-lg flex flex-col max-w-sm p-4 sm:p-6 gap-4 justify-between"
+>
+  <p>{review}</p>
+  <div class="flex items-center gap-4">
+    <Image
+      src={image}
+      alt={name}
+      width={48}
+      height={48}
+      class="rounded-full h-auto object-cover aspect-square w-12"
+    />
+    <div>
+      <h4 class="text-[var(--primary)] font-bold whitespace-nowrap">{name}</h4>
+      <p>{role}</p>
+    </div>
+  </div>
+</article>

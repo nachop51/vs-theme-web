@@ -3,45 +3,30 @@
 ---
 
 <nav
-  class="flex justify-between p-4 items-center fixed top-0 w-full bg-transparent z-50"
+  class="flex justify-between p-4 items-center fixed top-0 w-full z-50 bg-[#071c3433] backdrop-blur-sm text-[var(--text)]"
 >
   <div>
     <a href="/" class="text-2xl font-extrabold text-[var(--primary)]">Nachop</a>
   </div>
-  <ul>
+  <ul
+    class="flex gap-4 [&>li]:list-none [&>li>a]:text-white [&>li>a]:no-underline"
+  >
     <li>
-      <a href="/home">Home</a>
+      <a
+        href="https://npmjs.com/vs-theme-builder"
+        target="_blank"
+        rel="noopener noreferer">npm package</a
+      >
     </li>
     <li>
-      <a href="/npm">npm package</a>
+      <a
+        href="https://marketplace.visualstudio.com/items?itemName=nachop51.nachop-theme&ssr=false#overview"
+        target="_blank"
+        rel="noopener noreferer">nachop theme</a
+      >
     </li>
     <li>
-      <a href="/theme">Nachop Theme</a>
-    </li>
-    <li>
-      <a href="/docs">Documentation</a>
+      <a href="/docs">docs</a>
     </li>
   </ul>
 </nav>
-
-<style>
-  nav {
-    background-color: rgb(7 28 52 / 20%);
-    color: var(--text);
-    backdrop-filter: blur(5px);
-  }
-
-  ul {
-    display: flex;
-    gap: 1rem;
-  }
-
-  li {
-    list-style: none;
-  }
-
-  li a {
-    color: white;
-    text-decoration: none;
-  }
-</style>

@@ -14,6 +14,7 @@ import paletteSvg from "/public/palette.svg?raw";
 
 import packageImage from "/public/package.svg?raw";
 import featuresImage from "/public/features.svg?raw";
+import Review from "../components/Review.astro";
 
 const features = [
   {
@@ -62,6 +63,37 @@ const stuffIncluded = [
     tags: ["Auto-update", "Palette suggestions", "Color picker"],
   },
 ];
+
+const reviews = [
+  {
+    name: "John Doe",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
+    role: "Software Engineer",
+    image: "https://picsum.photos/id/237/200/300",
+  },
+  {
+    name: "Jane Doe",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
+    role: "Frontend Developer",
+    image: "https://picsum.photos/id/237/200/300",
+  },
+  {
+    name: "Alice Doe",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
+    role: "Backend Developer",
+    image: "https://picsum.photos/id/237/200/300",
+  },
+  {
+    name: "Bob Doe",
+    review:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
+    role: "Fullstack Developer",
+    image: "https://picsum.photos/id/237/200/300",
+  },
+];
 ---
 
 <Layout title="VS Theme Builder">
@@ -87,7 +119,7 @@ const stuffIncluded = [
       />
     </picture>
   </header>
-  <main>
+  <main class="p-4 max-w-[1200px] mx-auto">
     <!-- Features section -->
     <section class="mb-16">
       <header class="max-w-5xl">
@@ -104,7 +136,7 @@ const stuffIncluded = [
       </div>
     </section>
     <!-- Showcase section -->
-    <section>
+    <section class="mb-10">
       <h2>Nachop Theme Showcase</h2>
       <p class="text-center mb-8">
         Lorem Neque magni quis voluptates molestiae enim ipsum dolor sit amet
@@ -123,7 +155,13 @@ const stuffIncluded = [
         {features.map((feature) => <Feature {...feature} />)}
       </div>
     </section>
-    <section></section>
+    <!-- User opinions -->
+    <section class="mb-6">
+      <h2 class="text-left mb-8">What users are saying</h2>
+      <div class="flex gap-4">
+        {reviews.map((review) => <Review {...review} />)}
+      </div>
+    </section>
   </main>
 </Layout>
 
@@ -134,14 +172,7 @@ const stuffIncluded = [
 		background-size: 100% 70%, contain;
 		background-repeat: no-repeat, no-repeat;
   }
-
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
-  h1 {
+   h1 {
     @apply text-4xl sm:text-6xl md:text-7xl font-bold text-center text-pretty text-white mb-6;
   }
 
