@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import Card from "../components/Card.astro";
-import Feature from "../components/Feature.astro";
+import Card from "../components/ui/Card.astro";
+import Feature from "../components/ui/Feature.astro";
 import Layout from "../layouts/Layout.astro";
 
 import headerImage from "/public/header.png";
@@ -14,7 +14,7 @@ import paletteSvg from "/public/palette.svg?raw";
 
 import packageImage from "/public/package.svg?raw";
 import featuresImage from "/public/features.svg?raw";
-import Review from "../components/Review.astro";
+import Review from "../components/ui/Review.astro";
 
 const features = [
   {
@@ -158,7 +158,7 @@ const reviews = [
     <!-- User opinions -->
     <section class="mb-6">
       <h2 class="text-left mb-8">What users are saying</h2>
-      <div class="flex gap-4">
+      <div class="flex flex-wrap gap-4">
         {reviews.map((review) => <Review {...review} />)}
       </div>
     </section>
