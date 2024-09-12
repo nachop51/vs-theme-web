@@ -15,7 +15,7 @@ const { review, name, role, image } = Astro.props;
   class="bg-white rounded-xl shadow-lg flex flex-col max-w-sm p-4 sm:p-6 gap-4 justify-between"
 >
   <p>{review}</p>
-  <div class="flex items-center gap-4">
+  <div>
     <Image
       src={image}
       alt={name}
@@ -24,8 +24,25 @@ const { review, name, role, image } = Astro.props;
       class="rounded-full h-auto object-cover aspect-square w-12"
     />
     <div>
-      <h4 class="text-[var(--primary)] font-bold whitespace-nowrap">{name}</h4>
+      <h4>{name}</h4>
       <p>{role}</p>
     </div>
   </div>
 </article>
+
+<style>
+  article {
+  }
+
+  article > div {
+    @apply flex items-center gap-4;
+  }
+
+  h4 {
+    @apply text-[var(--primary)] font-bold whitespace-nowrap leading-6;
+  }
+
+  h4 + p {
+    @apply text-[var(--secondary)] text-sm;
+  }
+</style>
