@@ -1,0 +1,200 @@
+---
+import "swiper/css/bundle";
+import Review from "./ui/Review.astro";
+
+interface Props {
+  reviews: {
+    name: string;
+    review: string;
+    role: string;
+    image: string;
+  }[];
+}
+
+const { reviews } = Astro.props;
+---
+
+<h2 class="text-left mb-8">What users are saying</h2>
+
+<div class="testimonials-wrapper">
+  <div class="testimonials">
+    <div class="swiper">
+      <ul class="swiper-wrapper">
+        {reviews.map((review) => <Review {...review} />)}
+      </ul>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .testimonials-wrapper {
+    @apply w-full py-0 px-4 my-0 mx-auto;
+    @apply sm:px-8;
+    max-width: 1100px;
+  }
+
+  .testimonials {
+    max-width: 900px;
+    @apply mx-auto bg-white rounded-xl shadow-xl text-black;
+  }
+
+  .testimonials .body-wrapper {
+    @apply flex flex-col items-center gap-8 pt-8 pb-4 px-0;
+    @apply sm:pt-12;
+    @apply lg:flex-row lg:px-24 lg:gap-16;
+  }
+
+  .testimonials .thumbnail {
+    @apply relative flex-shrink-0 w-24 h-24 z-10;
+    @apply md:w-48 md:h-48;
+  }
+
+  .testimonials .thumbnail img {
+    @apply w-full h-full rounded-full object-scale-down p-4;
+    background-color: white;
+    transform: scale(2);
+    transition: transform 1s;
+  }
+
+  .testimonials .swiper-slide-active .thumbnail img {
+    transform: scale(1);
+  }
+
+  .testimonials .thumbnail::before {
+    content: "";
+    @apply absolute bottom-0 left-0 shadow-md bg-gradient-to-r from-purple-300/80 to-purple-300/50;
+    width: calc(100% + 30px);
+    height: calc(100% + 10px);
+    border-radius: 50%;
+    z-index: -1;
+    transition: border-radius 1s;
+  }
+
+  .testimonials .swiper-slide-active .thumbnail::before {
+    border-radius: 33% 67% 50% 50% / 50% 14% 86% 50%;
+  }
+
+  .testimonials .aside {
+    @apply relative pt-4 flex flex-col;
+  }
+
+  .testimonials .aside > p {
+    @apply relative text-base mb-8 z-10 px-4 text-justify;
+    @apply sm:px-16;
+    @apply lg:text-lg lg:px-0;
+    line-height: normal;
+    opacity: 0;
+    transform: translateX(10%);
+    transition:
+      transform 1s,
+      opacity 1s;
+  }
+
+  .testimonials .swiper-slide-active .aside > p {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .testimonials .aside > p::before,
+  .testimonials .aside > p::after {
+    font-family: serif;
+    @apply absolute text-7xl font-extrabold h-10 -z-10 text-gray-300/80;
+  }
+
+  .testimonials .aside > p::before {
+    content: open-quote;
+    @apply -top-10 left-5;
+    @apply sm:left-16;
+    @apply lg:left-2.5;
+  }
+
+  .testimonials .aside > p::after {
+    content: close-quote;
+    @apply right-4 translate-y-3;
+    @apply sm:right-16;
+    @apply lg:right-0;
+  }
+
+  .testimonials .aside .name {
+    @apply relative w-fit p-4 opacity-0;
+    @apply sm:px-16;
+    @apply lg:px-0;
+    transform: translateX(10%);
+    transition:
+      transform 1s 0.2s,
+      opacity 1s 0.3s;
+  }
+
+  .testimonials .swiper-slide-active .aside .name {
+    @apply translate-x-0 opacity-100;
+    @apply lg:-translate-x-12 lg:ml-0;
+  }
+
+  .testimonials .aside .name h4 {
+    @apply text-2xl font-extrabold opacity-80 text-[var(--primary)];
+  }
+
+  .testimonials .aside .name p {
+    @apply text-base text-left;
+  }
+
+  .testimonials :is(.swiper-button-next, .swiper-button-prev) {
+    @apply invisible bg-gray-200 shadow-md;
+    @apply sm:visible w-10 h-10 rounded-full top-1/2;
+    transition: background-color 0.3s;
+  }
+
+  .testimonials :is(.swiper-button-next, .swiper-button-prev):hover {
+    @apply bg-[var(--primary)];
+  }
+
+  .testimonials :is(.swiper-button-next, .swiper-button-prev)::after {
+    @apply text-lg font-extrabold text-white;
+  }
+
+  .testimonials .swiper-pagination {
+    @apply relative;
+  }
+
+  .testimonials .swiper-pagination span {
+    @apply bg-gray-200 opacity-100;
+    transition: width 0.3s;
+  }
+
+  .testimonials .swiper-pagination .swiper-pagination-bullet-active {
+    @apply w-4 opacity-100 rounded-md bg-[var(--primary)];
+  }
+</style>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    direction: "horizontal",
+    autoHeight: true,
+    loop: true,
+
+    autoplay: {
+      delay: 7500,
+      pauseOnMouseEnter: true,
+    },
+
+    modules: [Navigation, Pagination, Autoplay],
+
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>

@@ -1,21 +1,21 @@
 ---
 import { Image } from "astro:assets";
+
 import Card from "../components/ui/Card.astro";
 import Feature from "../components/ui/Feature.astro";
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import ReviewList from "../components/ReviewList.astro";
 
 import demoImage from "/public/demo.png";
+import headerImage from "/public/header.png";
 
 import eyeSvg from "/public/eye.svg?raw";
 import boltSvg from "/public/bolt.svg?raw";
 import bookSvg from "/public/book.svg?raw";
 import paletteSvg from "/public/palette.svg?raw";
-
 import packageImage from "/public/package.svg?raw";
 import featuresImage from "/public/features.svg?raw";
-import Review from "../components/ui/Review.astro";
-import Header from "../components/Header.astro";
-import headerImage from "/public/header.png";
 
 const features = [
   {
@@ -69,7 +69,7 @@ const reviews = [
   {
     name: "Hellena John",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis animi cum a consequuntur officiis! Vitae exercitationem nobis, perferendis cum recusandae eaque provident quidem nemo animi ipsam officiis qui reiciendis assumenda.",
     role: "Software Engineer",
     image: "https://picsum.photos/id/237/200/300",
   },
@@ -153,10 +153,7 @@ const headerInfo = {
     </section>
     <!-- User opinions -->
     <section class="mb-6">
-      <h2 class="text-left mb-8">What users are saying</h2>
-      <div class="flex flex-wrap gap-4">
-        {reviews.map((review) => <Review {...review} />)}
-      </div>
+      <ReviewList reviews={reviews} />
     </section>
   </main>
 </Layout>
