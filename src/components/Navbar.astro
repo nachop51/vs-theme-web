@@ -1,12 +1,18 @@
 ---
-
+import Logo from "./Logo.astro";
 ---
 
 <nav
-  class="flex justify-between p-4 items-center fixed top-0 w-full z-50 bg-[#071c3433] backdrop-blur-sm text-[var(--text)]"
+  class="flex justify-between px-4 sm:px-12 py-4 items-center fixed top-0 w-full z-50 bg-[#071c3433] backdrop-blur-sm text-[var(--text)]"
 >
   <div>
-    <a href="/" class="text-2xl font-extrabold text-[var(--primary)]">Nachop</a>
+    <a
+      href="/"
+      class="text-2xl font-extrabold text-[var(--primary)]"
+      title="Link to Home page"
+    >
+      <Logo width={27} height={33} />
+    </a>
   </div>
   <ul
     class="flex gap-4 [&>li]:list-none [&>li>a]:text-white [&>li>a]:no-underline"

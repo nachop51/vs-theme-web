@@ -46,19 +46,19 @@ import Logo from "../Logo.astro";
 
 <style>
   footer {
-    @apply text-white pt-32 sm:pt-48;
+    @apply text-white pt-40 sm:pt-48 px-4;
     background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQyMSIgaGVpZ2h0PSIxMjgwIiB2aWV3Qm94PSIwIDAgMTQyMSAxMjgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9mXzEwMDZfMTg0NikiPgo8cGF0aCBkPSJNNTAwIDY2OC42NDlDNTAwIDU3NS41MDcgNTk0LjI0NCA1MDAgNzEwLjUgNTAwQzgyNi43NTYgNTAwIDkyMSA1NzUuNTA3IDkyMSA2NjguNjQ5QzkyMSA3NjEuNzkyIDgyNi43NTYgNzgwIDcxMC41IDc4MEM1OTQuMjQ0IDc4MCA1MDAgNzYxLjc5MiA1MDAgNjY4LjY0OVoiIGZpbGw9IiM3RDJBRTgiLz4KPC9nPgo8ZGVmcz4KPGZpbHRlciBpZD0iZmlsdGVyMF9mXzEwMDZfMTg0NiIgeD0iMCIgeT0iMCIgd2lkdGg9IjE0MjEiIGhlaWdodD0iMTI4MCIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPgo8ZmVGbG9vZCBmbG9vZC1vcGFjaXR5PSIwIiByZXN1bHQ9IkJhY2tncm91bmRJbWFnZUZpeCIvPgo8ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9IkJhY2tncm91bmRJbWFnZUZpeCIgcmVzdWx0PSJzaGFwZSIvPgo8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyNTAiIHJlc3VsdD0iZWZmZWN0MV9mb3JlZ3JvdW5kQmx1cl8xMDA2XzE4NDYiLz4KPC9maWx0ZXI+CjwvZGVmcz4KPC9zdmc+Cg=="),
       url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTQ0MCA3ODYiIGZpbGw9Im5vbmUiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xNDQwIDc4NkwwIDc4NkwtNi44NzE0M2UtMDUgMC4wMDAxMjU4ODlDNDYxLjMyOSAxODkuMzM3IDk3OC42NzEgMTg5LjMzNyAxNDQwIDBMMTQ0MCA3ODZaIiBmaWxsPSIjMDcxQzM0Ii8+Cjwvc3ZnPgo=");
     background-size: cover, contain;
     background-repeat: no-repeat, no-repeat;
   }
 
-  .top {
-    @apply max-w-[calc(100%-8rem)] mx-auto;
+  footer .top {
+    @apply max-w-3xl mx-auto;
   }
 
   .top h3 {
-    @apply text-5xl font-extrabold mb-4;
+    @apply text-4xl sm:text-5xl font-extrabold mb-4;
   }
 
   .top p {
@@ -78,9 +78,9 @@ import Logo from "../Logo.astro";
   }
 
   .down {
-    @apply flex flex-col-reverse items-center gap-6 md:flex-row md:justify-between;
+    @apply flex flex-col-reverse items-center gap-6 md:flex-row md:justify-between mx-auto max-w-3xl;
 
-    @apply text-zinc-300 py-4 border-t border-gray-500/10 max-w-[calc(100%-4rem)] mx-auto;
+    @apply text-zinc-300 py-4 border-t border-gray-500/10;
   }
 
   .logo {
