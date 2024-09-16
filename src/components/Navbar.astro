@@ -3,36 +3,38 @@ import Logo from "./Logo.astro";
 ---
 
 <nav
-  class="flex justify-between px-4 sm:px-12 py-4 items-center fixed top-0 w-full z-50 bg-[#071c3433] backdrop-blur-sm text-[var(--text)]"
+  class="px-4 sm:px-12 py-4 fixed top-0 w-full z-50 bg-[#071c3433] backdrop-blur-sm text-[var(--text)]"
 >
-  <div>
-    <a
-      href="/"
-      class="text-2xl font-extrabold text-[var(--primary)]"
-      title="Link to Home page"
+  <div class="max-w-[1000px] mx-auto flex justify-between items-center">
+    <div>
+      <a
+        href="/"
+        class="text-2xl font-extrabold text-[var(--primary)]"
+        title="Link to Home page"
+      >
+        <Logo width={27} height={33} />
+      </a>
+    </div>
+    <ul
+      class="flex gap-4 [&>li]:list-none [&>li>a]:text-white [&>li>a]:no-underline"
     >
-      <Logo width={27} height={33} />
-    </a>
+      <li>
+        <a
+          href="https://npmjs.com/vs-theme-builder"
+          target="_blank"
+          rel="noopener noreferer">npm package</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=nachop51.nachop-theme&ssr=false#overview"
+          target="_blank"
+          rel="noopener noreferer">nachop theme</a
+        >
+      </li>
+      <li>
+        <a href="/docs">docs</a>
+      </li>
+    </ul>
   </div>
-  <ul
-    class="flex gap-4 [&>li]:list-none [&>li>a]:text-white [&>li>a]:no-underline"
-  >
-    <li>
-      <a
-        href="https://npmjs.com/vs-theme-builder"
-        target="_blank"
-        rel="noopener noreferer">npm package</a
-      >
-    </li>
-    <li>
-      <a
-        href="https://marketplace.visualstudio.com/items?itemName=nachop51.nachop-theme&ssr=false#overview"
-        target="_blank"
-        rel="noopener noreferer">nachop theme</a
-      >
-    </li>
-    <li>
-      <a href="/docs">docs</a>
-    </li>
-  </ul>
 </nav>
