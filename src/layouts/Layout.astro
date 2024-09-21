@@ -62,4 +62,12 @@ const { title } = Astro.props;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .link {
+    @apply text-[var(--primary)] no-underline;
+  }
+
+  .link:hover {
+    @apply underline;
+  }
 </style>

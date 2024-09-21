@@ -9,14 +9,15 @@ import Footer from "../components/ui/Footer.astro";
 import ReviewList from "../components/ReviewList.astro";
 
 import demoImage from "/public/demo.png";
-import headerImage from "/public/header.png";
+import headerImage from "/public/header.webp";
 
-import eyeSvg from "/public/eye.svg?raw";
-import boltSvg from "/public/bolt.svg?raw";
-import bookSvg from "/public/book.svg?raw";
-import paletteSvg from "/public/palette.svg?raw";
-import packageImage from "/public/package.svg?raw";
-import featuresImage from "/public/features.svg?raw";
+import eyeSvg from "/public/icons/eye.svg?raw";
+import boltSvg from "/public/icons/bolt.svg?raw";
+import bookSvg from "/public/icons/book.svg?raw";
+import paletteSvg from "/public/icons/palette.svg?raw";
+import packageImage from "/public/icons/package.svg?raw";
+import featuresImage from "/public/icons/features.svg?raw";
+import CheckIcon from "../components/icons/CheckIcon.astro";
 
 const features = [
   {
@@ -68,33 +69,39 @@ const stuffIncluded = [
 
 const reviews = [
   {
-    name: "Hellena John",
+    name: "Denisse Landau",
     review:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis animi cum a consequuntur officiis! Vitae exercitationem nobis, perferendis cum recusandae eaque provident quidem nemo animi ipsam officiis qui reiciendis assumenda.",
-    role: "Software Engineer",
+    role: "DevOps Engineer | Full Stack Developer",
     image: "https://picsum.photos/id/237/200/300",
   },
   {
-    name: "Hellen Jummy",
+    name: "Micaela Viera",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
-    role: "Frontend Developer",
-    image: "https://picsum.photos/id/237/200/300",
+      "I really liked it! I really enjoy the color selection chosen for this theme.\nIt is much easier to associate elements in the code, making it easier for me to learn.\nHighly recommended for learning how to write more organized and coherent code.",
+    role: "Frontend Developer | Cybersecurity",
+    image: "https://picsum.photos/id/234/200/303",
   },
   {
     name: "Alice Doe",
     review:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
     role: "Backend Developer",
-    image: "https://picsum.photos/id/237/200/300",
+    image: "https://picsum.photos/id/233/200/301",
   },
   {
     name: "Ralph Edwards",
     review:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
     role: "Fullstack Developer",
-    image: "https://picsum.photos/id/237/200/300",
+    image: "https://picsum.photos/id/236/200/302",
   },
+];
+
+const videoItems = [
+  "Simplify theme creation with 25 custom colors.",
+  "Instantly generate a ready-to-use JSON file.",
+  "Seamless integration with VS Code for flawless performance",
 ];
 
 const headerInfo = {
@@ -110,7 +117,9 @@ const headerInfo = {
     <picture slot="extra" class="w-full">
       <Image
         src={headerImage}
-        class="mx-auto max-w-xl w-full"
+        width={1391}
+        height={769}
+        class="mx-auto max-w-3xl w-full h-auto object-cover rounded-xl"
         alt="Theme visualization"
         loading={"eager"}
       />
@@ -143,12 +152,48 @@ const headerInfo = {
       <Image
         src={demoImage}
         alt="Nachop Theme Showcase"
-        class="max-w-3xl w-full mx-auto mb-6"
+        class="max-w-3xl w-full mx-auto mb-6 rounded-xl"
       />
       <div
         class="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-6 sm:gap-12 sm:px-6"
       >
         {features.map((feature) => <Feature {...feature} />)}
+      </div>
+    </section>
+    <section class="video-section">
+      <header>
+        <h2 class="text-center sm:text-left">Build and Customize your theme</h2>
+        <ul>
+          {
+            videoItems.map((item) => (
+              <li class="flex items-center gap-1">
+                <span class="w-6 h-6">
+                  <CheckIcon />
+                </span>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+        <a
+          class="link block mt-4 font-medium"
+          href="https://npmjs.com/vs-theme-builder"
+          target="_blank"
+          rel="noopener noreferer"
+        >
+          Go now to npm package to try it out &rarr;
+        </a>
+      </header>
+      <div class="relative w-full">
+        <div class="video-bg"></div>
+        <div class="aspect-[4/3] py-12">
+          <iframe
+            class="w-full h-full rounded-2xl"
+            src="https://www.youtube.com/embed/7e90gBu4pas"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
       </div>
     </section>
     <!-- User opinions -->
@@ -160,5 +205,23 @@ const headerInfo = {
 </Layout>
 
 <style lang="postcss">
+  .video-section {
+    @apply flex flex-col md:flex-row items-center gap-6 mb-8;
+  }
 
+  .video-section header {
+    @apply md:flex-[2];
+  }
+
+  .video-section > div {
+    @apply md:flex-[3];
+  }
+
+  .video-section ul {
+    @apply [&>li]:mb-1.5;
+  }
+
+  .video-bg {
+    @apply left-1/2 -translate-x-1/2 aspect-square absolute h-full -z-10 bg-[#7928ca] rounded-full;
+  }
 </style>
