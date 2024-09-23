@@ -17,9 +17,7 @@ import Logo from "./Logo.astro";
         <Logo width={27} height={33} />
       </a>
     </div>
-    <ul
-      class="flex gap-4 [&>li]:list-none [&>li>a]:text-white [&>li>a]:no-underline"
-    >
+    <ul class="flex [&>li>a]:no-underline">
       <li>
         <a
           href="https://npmjs.com/vs-theme-builder"
@@ -40,3 +38,13 @@ import Logo from "./Logo.astro";
     </ul>
   </div>
 </nav>
+
+<style>
+  ul li a {
+    @apply px-2 rounded-md text-white list-none;
+  }
+
+  ul li a:hover {
+    @apply text-[var(--accent)] bg-gray-600/30 transition-all;
+  }
+</style>
