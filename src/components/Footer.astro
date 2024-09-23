@@ -1,5 +1,24 @@
 ---
-import Logo from "../Logo.astro";
+import Logo from "./Logo.astro";
+
+const links = [
+  {
+    name: "Docs",
+    link: "/docs",
+  },
+  {
+    name: "Github",
+    link: "http://github.com/Nachop51/vs-theme-builder",
+  },
+  {
+    name: "VS Theme Builder",
+    link: "https://npmjs.com/vs-theme-builder",
+  },
+  {
+    name: "Nachop Theme",
+    link: "https://marketplace.visualstudio.com/items?itemName=nachop51.nachop-theme",
+  },
+];
 ---
 
 <div class="deco"></div>
@@ -38,10 +57,20 @@ import Logo from "../Logo.astro";
         <small> 2024 Ignacio Peralta </small>
       </div>
       <ul class="links">
-        <li>Docs</li>
-        <li>Github</li>
-        <li>VS-Theme-Builder</li>
-        <li>Nachop Theme</li>
+        {
+          links.map(({ name, link }) => (
+            <li>
+              <a
+                class="link"
+                href={link}
+                target={link.startsWith("http") ? "_blank" : "_self"}
+                rel="noopener noreferrer"
+              >
+                {name}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
@@ -68,7 +97,7 @@ import Logo from "../Logo.astro";
   }
 
   .top h3 {
-    @apply text-4xl sm:text-5xl font-extrabold mb-4;
+    @apply text-4xl sm:text-5xl font-extrabold mb-4 text-pretty;
   }
 
   .top p {
@@ -106,5 +135,9 @@ import Logo from "../Logo.astro";
 
   .links {
     @apply w-full justify-evenly grid grid-cols-2 text-center sm:flex sm:w-auto gap-4 text-base;
+  }
+
+  .link {
+    @apply text-zinc-300 transition-colors hover:text-[var(--accent)];
   }
 </style>

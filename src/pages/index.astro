@@ -5,7 +5,7 @@ import Card from "../components/ui/Card.astro";
 import Feature from "../components/ui/Feature.astro";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/ui/Footer.astro";
+import Footer from "../components/Footer.astro";
 import ReviewList from "../components/ReviewList.astro";
 
 import demoImage from "/public/demo.png";
@@ -19,33 +19,40 @@ import packageImage from "/public/icons/package.svg?raw";
 import featuresImage from "/public/icons/features.svg?raw";
 import CheckIcon from "../components/icons/CheckIcon.astro";
 
+const headerInfo = {
+  title: "Create Stunning VSCode themes",
+  highlight: "with ease",
+  description:
+    "VS Theme Builder is a powerful npm package that simplifies the process of creating and customizing themes for Visual Studio Code. Meet the magic behind Nachop Theme, a package designed to enhance your theming experience!",
+};
+
 const features = [
   {
     icon: eyeSvg,
     title: "Eye comfort",
     description:
-      "Protect your eyes with soft, balanced colors, perfect for long work sessions",
+      "Reduce eye strain and improve focus with a theme designed for optimal readability",
     color: "#d1fae5",
   },
   {
     icon: boltSvg,
-    title: "Faster understanding",
+    title: "Faster scanning",
     description:
-      "Enhance reading speed and comprehension by associating colors with key code elements",
+      "Quickly identify elements in your code with a carefully selected color palette",
     color: "#cffafe",
   },
   {
     icon: bookSvg,
     title: "Better readability",
     description:
-      "Enjoy clear, easy-to-read code with optimized fonts and proper contrast",
+      "Enjoy clear, easy-to-read code with optimized colors for proper contrast",
     color: "#dbeafe",
   },
   {
     icon: paletteSvg,
     title: "Consistent palette",
     description:
-      "Maintain visual uniformity across languages with a carefully selected color palette",
+      "Maintain visual uniformity across languages with a harmonious color scheme",
     color: "#ede9fe",
   },
 ];
@@ -67,49 +74,42 @@ const stuffIncluded = [
   },
 ];
 
+const videoItems = [
+  "Simplify theme creation with only 25 custom colors.",
+  "Manipulate the colors of your theme with ease.",
+  "Instantly generate a ready-to-use JSON file.",
+];
+
 const reviews = [
   {
     name: "Denisse Landau",
     review:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis animi cum a consequuntur officiis! Vitae exercitationem nobis, perferendis cum recusandae eaque provident quidem nemo animi ipsam officiis qui reiciendis assumenda.",
-    role: "DevOps Engineer | Full Stack Developer",
-    image: "https://picsum.photos/id/237/200/300",
+      "Nacho's theme was a one way ticket! Not only did it  accelerate my personal and professional work, but also made me migrate fully to VS Code! Granted with an extra cherry on top that's open source and curated for top development performance!",
+    role: "DevOps Engineer @ UKG | Leader & Founder @ AWS Girls UG UY | Partner Writer @ Medium",
+    image: "/people/denisse-landau.webp",
   },
   {
     name: "Micaela Viera",
     review:
-      "I really liked it! I really enjoy the color selection chosen for this theme.\nIt is much easier to associate elements in the code, making it easier for me to learn.\nHighly recommended for learning how to write more organized and coherent code.",
+      "I really liked it! I really enjoy the color selection chosen for this theme. It is much easier to associate elements in the code, making it easier for me to learn. Highly recommended for learning how to write more organized and coherent code.",
     role: "Frontend Developer | Cybersecurity",
-    image: "https://picsum.photos/id/234/200/303",
+    image: "/people/micaela-viera.webp",
   },
   {
-    name: "Alice Doe",
+    name: "Luz Saavedra",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
-    role: "Backend Developer",
-    image: "https://picsum.photos/id/233/200/301",
+      "I tried the Nachop theme first and loved it! It made coding feel super comfortable, and I liked the color balance. After using it for a while, I wanted to customize it even more to fit my own style, so I tried the npm package, the process of creating my own theme was smooth. Really perfect for anyone who wants to personalize their workspace.",
+    role: "Frontend Developer | UI/UX Designer & Researcher",
+    image: "/people/luz-saavedra.webp",
   },
   {
-    name: "Ralph Edwards",
+    name: "Facundo Sanchez",
     review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates.",
-    role: "Fullstack Developer",
-    image: "https://picsum.photos/id/236/200/302",
+      "Using vs-theme-builder I have the possibility to make my favorite code editor and my computer theme match. In a matter of minutes and by choosing few colors I can generate a theme that suits my tastes and needs.",
+    role: "Fullstack Developer @ Dixtra",
+    image: "/people/facundo-sanchez.webp",
   },
 ];
-
-const videoItems = [
-  "Simplify theme creation with 25 custom colors.",
-  "Instantly generate a ready-to-use JSON file.",
-  "Seamless integration with VS Code for flawless performance",
-];
-
-const headerInfo = {
-  title: "Create Stunning VSCode themes",
-  highlight: "with ease",
-  description:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis animi cum a consequuntur officiis! Vitae exercitationem nobis, perferendis cum recusandae eaque provident quidem nemo animi ipsam officiis qui reiciendis assumenda.",
-};
 ---
 
 <Layout title="VS Theme Builder">
@@ -144,15 +144,18 @@ const headerInfo = {
     <!-- Showcase section -->
     <section class="mb-10">
       <h2>Nachop Theme Showcase</h2>
-      <p class="text-center mb-8">
-        Lorem Neque magni quis voluptates molestiae enim ipsum dolor sit amet
-        consectetur adipisicing elit. Quasi, sit consequatur. Neque magni quis
-        voluptates molestiae enim.
+      <p class="text-center mb-6">
+        Dark theme, with a purple touch in every detail, make your VSCode look
+        stunning!
+        <br />
+        <span class="font-semibold highlight">
+          Nachop Theme + Symbols + Fluent Icons
+        </span>
       </p>
       <Image
         src={demoImage}
         alt="Nachop Theme Showcase"
-        class="max-w-3xl w-full mx-auto mb-6 rounded-xl"
+        class="max-w-3xl w-full mx-auto mb-8 rounded-xl"
       />
       <div
         class="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-6 sm:gap-12 sm:px-6"
@@ -222,6 +225,6 @@ const headerInfo = {
   }
 
   .video-bg {
-    @apply left-1/2 -translate-x-1/2 aspect-square absolute h-full -z-10 bg-[#7928ca] rounded-full;
+    @apply left-1/2 -translate-x-1/2 aspect-square absolute h-full -z-10 bg-[#7928ca]/40 rounded-full;
   }
 </style>
