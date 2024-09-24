@@ -1,4 +1,6 @@
 ---
+import Icon from "../Icon.astro";
+
 interface Props {
   title: string;
   description: string;
@@ -11,7 +13,7 @@ const { title, description, icon, tags } = Astro.props;
 
 <div class="container">
   <figure>
-    <Fragment set:html={icon} />
+    <Icon icon={icon} />
   </figure>
   <div class="content">
     <h3>{title}</h3>

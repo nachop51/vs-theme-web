@@ -11,12 +11,6 @@ import ReviewList from "../components/ReviewList.astro";
 import demoImage from "/public/demo.png";
 import headerImage from "/public/header.webp";
 
-import eyeSvg from "/public/icons/eye.svg?raw";
-import boltSvg from "/public/icons/bolt.svg?raw";
-import bookSvg from "/public/icons/book.svg?raw";
-import paletteSvg from "/public/icons/palette.svg?raw";
-import packageImage from "/public/icons/package.svg?raw";
-import featuresImage from "/public/icons/features.svg?raw";
 import CheckIcon from "../components/icons/CheckIcon.astro";
 
 const headerInfo = {
@@ -28,28 +22,28 @@ const headerInfo = {
 
 const features = [
   {
-    icon: eyeSvg,
+    icon: "eye",
     title: "Eye comfort",
     description:
       "Reduce eye strain and improve focus with a theme designed for optimal readability",
     color: "#d1fae5",
   },
   {
-    icon: boltSvg,
+    icon: "bolt",
     title: "Faster scanning",
     description:
       "Quickly identify elements in your code with a carefully selected color palette",
     color: "#cffafe",
   },
   {
-    icon: bookSvg,
+    icon: "book",
     title: "Better readability",
     description:
       "Enjoy clear, easy-to-read code with optimized colors for proper contrast",
     color: "#dbeafe",
   },
   {
-    icon: paletteSvg,
+    icon: "palette",
     title: "Consistent palette",
     description:
       "Maintain visual uniformity across languages with a harmonious color scheme",
@@ -62,14 +56,14 @@ const stuffIncluded = [
     title: "Package Functionality",
     description:
       "Effortlessly generate customizable VSCode themes using this package",
-    icon: packageImage,
+    icon: "package",
     tags: ["Easy to use", "Customizable", "Powerful"],
   },
   {
     title: "Key Features",
     description:
       "Enjoy features like auto-update and color palette suggestions",
-    icon: featuresImage,
+    icon: "features",
     tags: ["Auto-update", "Palette suggestions", "Color picker"],
   },
 ];
@@ -87,13 +81,28 @@ const reviews = [
       "Nacho's theme was a one way ticket! Not only did it  accelerate my personal and professional work, but also made me migrate fully to VS Code! Granted with an extra cherry on top that's open source and curated for top development performance!",
     role: "DevOps Engineer @ UKG | Leader & Founder @ AWS Girls UG UY | Partner Writer @ Medium",
     image: "/people/denisse-landau.webp",
-  },
-  {
-    name: "Micaela Viera",
-    review:
-      "I really liked it! I really enjoy the color selection chosen for this theme. It is much easier to associate elements in the code, making it easier for me to learn. Highly recommended for learning how to write more organized and coherent code.",
-    role: "Frontend Developer | Cybersecurity",
-    image: "/people/micaela-viera.webp",
+    links: [
+      {
+        href: "https://www.linkedin.com/in/denisselandau/",
+        text: "DevOps Engineer @ UKG",
+        icon: "linkedin",
+      },
+      {
+        href: "https://medium.com/@denisselandau97",
+        text: "Partner Writer @ Medium",
+        icon: "medium",
+      },
+      {
+        href: "https://www.linkedin.com/company/aws-girls-user-group-uy",
+        text: "Leader & Founder @ AWS Girls UG UY",
+        icon: "linkedin",
+      },
+      {
+        href: "https://medium.com/@denisselandau97/list/how-to-improve-your-english-daily-72476cc2f004",
+        text: "Leader & Founder @ HTIYED",
+        icon: "medium",
+      },
+    ],
   },
   {
     name: "Luz Saavedra",
@@ -101,13 +110,66 @@ const reviews = [
       "I tried the Nachop theme first and loved it! It made coding feel super comfortable, and I liked the color balance. After using it for a while, I wanted to customize it even more to fit my own style, so I tried the npm package, the process of creating my own theme was smooth. Really perfect for anyone who wants to personalize their workspace.",
     role: "Frontend Developer | UI/UX Designer & Researcher",
     image: "/people/luz-saavedra.webp",
+    links: [
+      {
+        href: "https://www.linkedin.com/in/ludasaadi//",
+        text: "LinkedIn",
+        icon: "linkedin",
+      },
+      {
+        href: "https://github.com/vandriodd",
+        text: "GitHub",
+        icon: "github",
+      },
+      {
+        href: "https://luz-saavedra-portfolio-vandriodds-projects.vercel.app/",
+        text: "Portfolio",
+        icon: "website",
+      },
+    ],
   },
   {
-    name: "Facundo Sanchez",
+    name: "Facundo Sánchez",
     review:
       "Using vs-theme-builder I have the possibility to make my favorite code editor and my computer theme match. In a matter of minutes and by choosing few colors I can generate a theme that suits my tastes and needs.",
     role: "Fullstack Developer @ Dixtra",
     image: "/people/facundo-sanchez.webp",
+    links: [
+      {
+        href: "https://www.linkedin.com/in/facundos%C3%A1nchez/",
+        text: "LinkedIn",
+        icon: "linkedin",
+      },
+      {
+        href: "https://github.com/Facusan2016",
+        text: "GitHub",
+        icon: "github",
+      },
+      {
+        href: "https://facundosanchezv2.netlify.app/",
+        text: "Portfolio",
+        icon: "website",
+      },
+    ],
+  },
+  {
+    name: "Micaela Viera",
+    review:
+      "I really liked it! I really enjoy the color selection chosen for this theme. It is much easier to associate elements in the code, making it easier for me to learn. Highly recommended for learning how to write more organized and coherent code.",
+    role: "Frontend Developer | Cybersecurity",
+    image: "/people/micaela-viera.webp",
+    links: [
+      {
+        href: "https://www.linkedin.com/in/micaela-viera-9716772b3/",
+        text: "LinkedIn",
+        icon: "linkedin",
+      },
+      {
+        href: "https://github.com/MicaViera",
+        text: "GitHub",
+        icon: "github",
+      },
+    ],
   },
 ];
 ---
@@ -195,6 +257,7 @@ const reviews = [
             src="https://www.youtube.com/embed/7e90gBu4pas"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            loading="lazy"
             allowfullscreen></iframe>
         </div>
       </div>
