@@ -26,7 +26,7 @@ const { title, description, icon, tags } = Astro.props;
 
 <style lang="postcss">
   .container {
-    @apply flex flex-row gap-2 items-center bg-white shadow-lg rounded-md p-4 flex-1 min-w-[300px];
+    @apply flex flex-col text-center md:text-left md:flex-row gap-2 items-center bg-white shadow-lg rounded-md p-4 flex-1;
   }
 
   figure {
@@ -37,15 +37,15 @@ const { title, description, icon, tags } = Astro.props;
   }
 
   h3 {
-    @apply text-lg font-bold;
+    @apply text-lg font-bold whitespace-normal sm:whitespace-nowrap;
   }
 
   p {
-    @apply text-sm mb-2;
+    @apply text-sm mb-2 text-balance;
   }
 
   ul {
-    @apply flex flex-wrap gap-2;
+    @apply flex flex-wrap gap-2 justify-center md:justify-start;
   }
 
   li {

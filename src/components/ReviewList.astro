@@ -189,6 +189,12 @@ const { reviews } = Astro.props;
     @apply flex gap-1.5 mt-1 -ml-[3px];
   }
 
+  @media only screen and (max-width: 600px) {
+    .testimonials .aside .links {
+      @apply flex-col gap-2 mt-3;
+    }
+  }
+
   .testimonials .aside .links a {
     @apply flex items-center text-3xl  hover:-translate-y-0.5 transition-all hover:text-[var(--primary)] hover:mr-2;
   }
