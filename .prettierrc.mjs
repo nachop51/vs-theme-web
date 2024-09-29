@@ -3,4 +3,5 @@
 export default {
   plugins: ['prettier-plugin-astro'],
   tailwindConfig: './tailwind.config.mjs',
+  semi: true,
 };
