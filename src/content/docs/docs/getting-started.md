@@ -38,7 +38,7 @@ Now you can start using VS Theme Builder in your project.
 
 Like this:
 
-```js title=javascript
+```js title=main.js
 import { buildThemeFromScheme } from 'vs-theme-builder';
 
 const theme = buildThemeFromScheme({

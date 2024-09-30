@@ -21,6 +21,10 @@ export default defineConfig({
           label: "How to use",
           items: [],
         },
+        {
+          label: "Functions",
+          items: [],
+        },
       ],
       credits: true,
     }),
