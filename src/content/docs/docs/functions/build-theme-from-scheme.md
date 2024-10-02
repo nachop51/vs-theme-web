@@ -3,6 +3,8 @@ title: buildThemeFromScheme
 description: Build a theme from a scheme configuration
 ---
 
+The purpose of this function is to build a theme object, ready to be used in a theme file, from a scheme configuration.
+
 ```ts
 buildThemeFromScheme(config: createThemeOptions): object
 ```
