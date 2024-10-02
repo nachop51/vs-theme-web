@@ -36,7 +36,7 @@ npm install vs-theme-builder
 
 Now you can start using VS Theme Builder in your project.
 
-Like this:
+For example, you can create a new file called `main.js` and start building your theme.
 
 ```js title=main.js
 import { buildThemeFromScheme } from 'vs-theme-builder';
@@ -45,3 +45,40 @@ const theme = buildThemeFromScheme({
   // Your scheme configuration here
 });
 ```
+
+### Build a theme using the example scheme
+
+You can explore the example that comes with the package to see how to use it.
+
+```js title=main.js
+import { buildThemeFromScheme, createSchemeFromColors, exampleTheme } from 'vs-theme-builder';
+
+const name = 'My Theme';
+
+const scheme = createSchemeFromColors({ colors: exampleTheme });
+
+const theme = buildThemeFromScheme({
+  scheme,
+  name,
+  isBordered: false
+})
+```
+
+And now you can dump the theme to a file:
+
+```js title=main.js
+
+import fs from 'node:fs'
+
+fs.writeFileSync(filePath(name, true), JSON.stringify(theme))
+```
+
+And just like that, you have created a **full theme** using the example scheme.
+
+### Test locally your theme and it deploy your theme to VSCode Marketplace
+
+You can find more information about how to test your theme locally and deploy it to the VSCode Marketplace in the [official vscode documentation](https://code.visualstudio.com/api/extension-guides/color-theme#create-a-new-color-theme).
+
+---
+
+And that's it! You have successfully created your own theme using VS Theme.

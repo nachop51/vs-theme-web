@@ -23,10 +23,20 @@ export default defineConfig({
         },
         {
           label: "Functions",
-          items: [],
+          items: [
+            "docs/functions/build-theme-from-scheme",
+            "docs/functions/create-scheme-from-colors",
+          ],
+        },
+        {
+          label: "Types",
+          items: ["docs/types/full-theme", "docs/types/color-scheme"],
         },
       ],
       credits: true,
+      editLink: {
+        baseUrl: "https://github.com/nachop51/vs-theme-web/tree/main/",
+      },
     }),
   ],
 });
