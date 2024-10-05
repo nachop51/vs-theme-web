@@ -18,8 +18,8 @@ export default defineConfig({
       sidebar: [
         { slug: "docs/getting-started" },
         {
-          label: "How to use",
-          items: [],
+          label: "Guides",
+          items: ["docs/guides/my-first-theme"],
         },
         {
           label: "Functions",

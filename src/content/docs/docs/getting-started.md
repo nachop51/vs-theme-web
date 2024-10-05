@@ -5,7 +5,7 @@ description: Get started with VS Theme Builder
 
 VS Theme Builder is a tool that allows you to create and customize your own Visual Studio Code theme.
 
-It uses chroma.js to generate color schemes from a base color. You can use the generated color schemes to create your own themes.
+It uses [chroma.js](https://gka.github.io/chroma.js/) to generate color schemes from a base color. You can use the generated color schemes to create your own themes.
 
 ## Quick Start
 
@@ -15,6 +15,7 @@ Create a new node project with the following command:
 
 ```sh title=bash
 npm init -y
+# pnpm init
 ```
 
 This will create a `package.json` file in your project directory.
@@ -32,6 +33,7 @@ Install the VS Theme Builder package with the following command:
 
 ```sh title=bash
 npm install vs-theme-builder
+# pnpm add vs-theme-builder
 ```
 
 Now you can start using VS Theme Builder in your project.
