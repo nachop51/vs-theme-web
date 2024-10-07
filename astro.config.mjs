@@ -6,7 +6,7 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "vs-theme-builder.nachop.xyz",
+  site: "https://vs-theme-builder.nachop.xyz",
   integrations: [
     tailwind(),
     starlight({
