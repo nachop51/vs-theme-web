@@ -21,8 +21,8 @@ export default defineConfig({
         {
           label: "Guides",
           items: [
-            "docs/guides/my-first-theme",
-            "docs/guides/how-nachop-theme-is-built",
+            // "docs/guides/my-first-theme",
+            // "docs/guides/how-nachop-theme-is-built",
           ],
         },
         {
