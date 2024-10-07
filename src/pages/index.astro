@@ -10,6 +10,7 @@ import ReviewList from "../components/ReviewList.astro";
 
 import demoImage from "/src/assets/demo.webp";
 import headerImage from "/src/assets/header.webp";
+import VideoPoster from "/src/assets/poster.webp";
 
 import CheckIcon from "../components/icons/CheckIcon.astro";
 
@@ -255,11 +256,7 @@ const reviews = [
       <div class="relative w-full">
         <div class="video-bg"></div>
         <div class="aspect-[4/3] py-12">
-          <video
-            poster="/src/assets/poster.webp"
-            controls
-            class="w-full rounded-lg"
-          >
+          <video poster={VideoPoster.src} controls class="w-full rounded-lg">
             <source src="/demo.mp4" type="video/mp4" />
             <p>Your browser cannot play the provided video file.</p>
           </video>
