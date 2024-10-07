@@ -6,6 +6,7 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "vs-theme-builder.nachop.xyz",
   integrations: [
     tailwind(),
     starlight({
@@ -19,7 +20,10 @@ export default defineConfig({
         { slug: "docs/getting-started" },
         {
           label: "Guides",
-          items: ["docs/guides/my-first-theme"],
+          items: [
+            "docs/guides/my-first-theme",
+            "docs/guides/how-nachop-theme-is-built",
+          ],
         },
         {
           label: "Functions",

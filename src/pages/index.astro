@@ -8,8 +8,8 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ReviewList from "../components/ReviewList.astro";
 
-import demoImage from "/public/demo.png";
-import headerImage from "/public/header.webp";
+import demoImage from "/src/assets/demo.webp";
+import headerImage from "/src/assets/header.webp";
 
 import CheckIcon from "../components/icons/CheckIcon.astro";
 
@@ -220,7 +220,7 @@ const reviews = [
       <Image
         src={demoImage}
         alt="Nachop Theme Showcase"
-        class="max-w-3xl w-full mx-auto mb-8 rounded-xl drop-shadow-lg"
+        class="max-w-3xl w-full mx-auto mb-8 rounded-xl drop-shadow-xl"
       />
       <div
         class="grid grid-cols-2 md:grid-cols-4 justify-items-center gap-6 sm:gap-12 sm:px-6"
