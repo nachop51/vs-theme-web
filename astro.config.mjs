@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
-
 import tailwind from "@astrojs/tailwind";
-
 import starlight from "@astrojs/starlight";
+import starlightImageZoom from "starlight-image-zoom";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +20,7 @@ export default defineConfig({
         {
           label: "Guides",
           items: [
-            // "docs/guides/my-first-theme",
+            "docs/guides/create-your-first-theme",
             "docs/guides/how-nachop-theme-is-built",
           ],
         },
@@ -42,6 +41,7 @@ export default defineConfig({
       editLink: {
         baseUrl: "https://github.com/nachop51/vs-theme-web/tree/main/",
       },
+      plugins: [starlightImageZoom()],
     }),
   ],
 });
