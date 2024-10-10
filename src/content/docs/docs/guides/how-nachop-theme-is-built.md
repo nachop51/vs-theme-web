@@ -5,11 +5,11 @@ description: Learn how the Nachop theme is built using VS Theme Builder.
 
 Nachop Theme is built using VS Theme Builder. It has a really simple build process.
 
-Let's make a list to make it easier to understand:
+Let's make a list of steps to make it easier to understand:
 
-- 1\. **Define the color scheme.**
-- 2\. **Build a schema that represent the theme using the color scheme.**
-- 3\. **Build the theme using the theme-schema.**
+- 1\. **Define the colors.**
+- 2\. **Build a schema that represent the `theme` itself.**
+- 3\. **Build the `theme` from the theme representation.**
 - 4\. **Save the theme to a file, and configure the package.json file.**
 - 5\. **Deploy the theme to a VS Code extension.**
 
@@ -56,11 +56,17 @@ const colors: ColorScheme = {
 
 ## Theme Schema
 
-Next, we need to build a schema that represents the theme using the color scheme. Here is the theme schema used in the Nachop theme:
+Next, we need to build a schema that represents the theme using the colors that we just have defined.
+
+Here is how I build the scheme object:
 
 ```ts
 const scheme = createSchemeFromColors({ colors });
 ```
+
+:::note
+By default the type will of the theme will be `dark`. If you want to create a light theme, you can pass the `light` value to `type`.
+:::
 
 ## Build Theme
 
@@ -74,9 +80,11 @@ const theme = buildThemeFromScheme({
 });
 ```
 
+We pass the name of the theme as `Nachop Theme` and set the `isBordered` to `false`, because we don't want the theme to have borders.
+
 ## Save Theme
 
-To save the theme to a file, let's do something like this:
+Next, we have to save the theme to a file, using `fs` is pretty simple:
 
 ```ts
 fs.writeFileSync('nachop-theme.json', JSON.stringify(theme));

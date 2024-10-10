@@ -48,7 +48,7 @@ And the `package.json` file should look something like this:
 
 ### Install `vs-theme-builder`
 
-Next, install the `vs-theme-builder` package as a dev dependency.because we only need it during development.
+Next, install the `vs-theme-builder` package as a dev dependency because we only need it during development.
 
 ```bash title=bash
 pnpm add -D vs-theme-builder

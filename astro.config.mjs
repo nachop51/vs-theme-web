@@ -22,6 +22,7 @@ export default defineConfig({
           items: [
             "docs/guides/create-your-first-theme",
             "docs/guides/how-nachop-theme-is-built",
+            "docs/guides/cloning-other-themes",
           ],
         },
         {
