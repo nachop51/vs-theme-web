@@ -20,6 +20,7 @@ export default defineConfig({
         {
           label: "Guides",
           items: [
+            "docs/guides/how-to-master-vs-theme-builder",
             "docs/guides/create-your-first-theme",
             "docs/guides/how-nachop-theme-is-built",
             "docs/guides/cloning-other-themes",
@@ -43,6 +44,10 @@ export default defineConfig({
         baseUrl: "https://github.com/nachop51/vs-theme-web/tree/main/",
       },
       plugins: [starlightImageZoom()],
+      social: {
+        github: "https://github.com/nachop51/",
+        linkedin: "https://www.linkedin.com/in/ignacio-peralta-dev/",
+      },
     }),
   ],
 });

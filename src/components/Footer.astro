@@ -110,10 +110,17 @@ const links = [
 
   .top .buttons a {
     @apply px-8 py-3.5 text-sm sm:text-lg font-semibold text-white bg-[var(--primary)] rounded-lg border-2 border-[var(--primary)];
+    transition:
+      background-color 0.2s,
+      color 0.2s;
   }
 
   .top .buttons a:first-child {
     @apply bg-transparent border-white;
+  }
+
+  .top .buttons a:hover {
+    @apply bg-white text-[var(--primary)];
   }
 
   .down {

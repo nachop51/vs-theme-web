@@ -24,7 +24,7 @@ Your project directory should look like this:
 
 ```plaintext
 vs-theme-dir/
-├── package.json
+└── package.json
 ```
 
 ### Install VS Theme Builder
